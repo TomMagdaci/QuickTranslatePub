@@ -41,6 +41,8 @@ class Holding(implements(Animation)):
         self._isAlreadyPressed = True
         self._browser = webdriver.Edge()
         self._browser.get("https://translate.google.com/?um=1&ie=UTF-8&hl=iw&client=tw-ob#view=home&op=translate&sl=en&tl=iw&text=")
+        time.sleep(4)
+        self._browser.minimize_window()
 
     def shouldStop(self):
         return self._stop
@@ -66,7 +68,6 @@ class Holding(implements(Animation)):
         url = "https://translate.google.com/?um=1&ie=UTF-8&hl=iw&client=tw-ob#view=home&op=translate&sl=en&tl=iw&text=" \
               + senConcatenated
         self._browser.get(url)
-        self._browser.minimize_window()
         self._browser.set_window_size(1400,900)
         state_left = win32api.GetKeyState(0x01)
         time.sleep(1.5)
