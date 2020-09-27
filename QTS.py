@@ -51,6 +51,7 @@ class Holding(implements(Animation)):
             self._stop = True
             self._browser.quit()
         keyboard.wait('esc')
+        time.sleep(0.2)
         keyboard.press('ctrl')
         keyboard.press('c')
         time.sleep(0.2)
@@ -66,7 +67,7 @@ class Holding(implements(Animation)):
               + senConcatenated
         self._browser.get(url)
         self._browser.minimize_window()
-        self._browser.maximize_window()
+        self._browser.set_window_size(1400,900)
         state_left = win32api.GetKeyState(0x01)
         time.sleep(1.5)
         a = win32api.GetKeyState(0x01) #get the mouse key state after 1.5 seconds
