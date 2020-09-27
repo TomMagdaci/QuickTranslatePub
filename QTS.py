@@ -3,6 +3,7 @@ import time
 import keyboard
 import webbrowser
 import win32clipboard
+import win32api
 from selenium import webdriver
 import time
 
@@ -66,7 +67,19 @@ class Holding(implements(Animation)):
         self._browser.get(url)
         self._browser.minimize_window()
         self._browser.maximize_window()
+        state_left = win32api.GetKeyState(0x01)
         time.sleep(1.5)
+        ##### mouse click check section
+        a = win32api.GetKeyState(0x01)
+        if a != state_left:  # Button state changed
+            return
+            #state_left = a
+            #print(a)
+            #if a < 0:
+             #   print('Left Button Pressed')
+            #else:
+             #   print('Left Button Released')
+        #####
         self._browser.minimize_window()
         return
 
