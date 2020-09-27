@@ -69,17 +69,9 @@ class Holding(implements(Animation)):
         self._browser.maximize_window()
         state_left = win32api.GetKeyState(0x01)
         time.sleep(1.5)
-        ##### mouse click check section
-        a = win32api.GetKeyState(0x01)
+        a = win32api.GetKeyState(0x01) #get the mouse key state after 1.5 seconds
         if a != state_left:  # Button state changed
             return
-            #state_left = a
-            #print(a)
-            #if a < 0:
-             #   print('Left Button Pressed')
-            #else:
-             #   print('Left Button Released')
-        #####
         self._browser.minimize_window()
         return
 
