@@ -73,7 +73,7 @@ class Holding(implements(Animation)):
         time.sleep(1.5)
         a = win32api.GetKeyState(0x01) #get the mouse key state after 1.5 seconds
         if a != state_left:  # Button state changed
-            return
+            time.sleep(4)
         self._browser.minimize_window()
         return
 
