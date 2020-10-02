@@ -41,7 +41,7 @@ class Holding(implements(Animation)):
         self._isAlreadyPressed = True
         self._browser = webdriver.Edge()
         self._browser.get("https://translate.google.com/?um=1&ie=UTF-8&hl=iw&client=tw-ob#view=home&op=translate&sl=en&tl=iw&text=")
-        time.sleep(4)
+        time.sleep(3)
         self._browser.minimize_window()
 
     def shouldStop(self):

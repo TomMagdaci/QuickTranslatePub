@@ -1,0 +1,5 @@
+Versions:
+1.3 feature removed - minimize before maximize,
+    reason: speed. Currently, minimize happens 4 sec after initializing, then in every action it will maximize and after that minimize.
+1.4 feature update - clicking on mouses's left-click pauses the window's minimizing for 4 seconds
+1.5 feautres updates - updating the pausing time at the initializing before minimizing to be 3 seconds instead of 4 seconds.
